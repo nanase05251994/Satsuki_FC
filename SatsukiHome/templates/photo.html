@@ -1,0 +1,32 @@
+{% extends 'master.html' %}
+
+{% block content %}
+{% load static %}
+    <h3>Photo</h3>
+
+    <button onclick="document.getElementById('intro').src='{% static '/images/GIF/smile.gif' %}'">Smile</button>
+    <button onclick="document.getElementById('intro').src='{% static '/images/GIF/cry.gif' %}'">Cry</button>
+    <button onclick="document.getElementById('intro').src='{% static '/images/GIF/wink.gif' %}'">Wink</button>
+    <button onclick="document.getElementById('intro').src='{% static '/images/GIF/hi.gif' %}'">Hi</button>
+    <br>
+    <br>
+    <img id="intro" src="{% static '/images/GIF/smile.gif' %}" alt="GG" style="width: 40%; height: fit-content;">
+    <br>
+    <br>
+
+    <h3>B.L.T2023 Jan</h3>
+    <br>
+    <button onclick="bltx=left(bltx,6,'BLT')">Previous</button>
+    <button onclick="bltx=right(bltx,6,'BLT')">Next</button>
+    <br>
+    <br>
+    <img id="BLT" src="{% static '/images/BLT/1.jpg' %}" alt="GG" style="width:50%;height: fit-content;">
+    <br>
+    <br>
+
+    <h3>EX2022 Jul</h3>
+    <br>
+    <img id="EX" src="{% static '/images/EX/1.jpg' %}" alt="GG" style="width:50%; height:fit-content;">
+
+<script src="{% static 'photoscript.js' %}"></script>
+{% endblock %}

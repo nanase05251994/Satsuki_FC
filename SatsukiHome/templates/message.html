@@ -1,0 +1,38 @@
+{% extends "master.html" %}
+
+{% block content %}
+<style>
+    table {
+        width: 50%;
+    }
+    h4 {
+        color:crimson;
+    }
+    pre {
+        color: aqua;
+    }
+    td {
+        border: 1px solid seagreen;
+    }
+</style>
+<h3>Leave Your Message For Satsuki!!!</h3>
+<form action="leave/" method="post">
+    {% csrf_token %}
+    <label for="leave">Member Only</label><br>
+    <textarea id="leave" name="word" rows="5" cols="50" placeholder="leave your message here"></textarea><br>
+    <input type="submit" value="Submit">
+    <input type="hidden" value="{{ user.get_username }}" name="postname"> 
+</form>
+<br>
+<h3>Message Board</h3>
+<table>
+    {% for x in records reversed %}
+    <tr>
+        <td><h4>{{ x.username }}:</h4></td>
+    </tr>
+    <tr>
+        <td><pre>{{ x.messages }}</pre></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

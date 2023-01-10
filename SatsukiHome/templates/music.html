@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+
+{% block content %}
+{% load static %}
+    <h3>Music</h3>
+    <button onclick="document.getElementById('player').src='{% static '/song/絶望の一秒前.mp3' %}'">絶望の一秒前</button><br><br>
+    <button onclick="document.getElementById('player').src='{% static '/song/バンドエイド剥がすような別れ方.mp3' %}'">バンドエイド剥がすような別れ方</button><br><br>
+    <button onclick="document.getElementById('player').src='{% static '/song/17分間.mp3' %}'">17分間</button><br><br>
+    <br>
+    <audio id="player" autoplay controls></audio>
+
+    <h3>Music Video</h3>
+
+    <p>1st 絶望の一秒前</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zVGtmufJdGc" frameborder="0"
+        allowfullscreen></iframe>
+    <br>
+
+    <p>2nd バンドエイド剥がすような別れ方</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NCw7XnJMXhA" frameborder="0"
+        allowfullscreen></iframe>
+    <br>
+
+    <p>3rd 17分間</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VTE50fapII8" frameborder="0"
+        allowfullscreen></iframe>
+    
+{% endblock %}
