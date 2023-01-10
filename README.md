@@ -1,0 +1,2 @@
+# SatsukiFC
+Django Practice
